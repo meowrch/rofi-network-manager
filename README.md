@@ -8,7 +8,7 @@
 
 
 # Installation
-1. `git clone git@github.com:DIMFLIX-OFFICIAL/rofi-wifi-menu.git`
+1. `git clone https://github.com/DIMFLIX-OFFICIAL/rofi-wifi-menu.git`
 2. `cd rofi-wifi-menu`
 3. `sh rofi-wifi-menu.sh`
    
