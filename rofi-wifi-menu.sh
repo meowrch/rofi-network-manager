@@ -7,7 +7,7 @@
 # ┏┛┗┛┣┫┣┫┃┃┃┃┃┃╋╋┃┗━┛┣┫┣┳┛┏┓┗┓
 # ┗━━━┻━━┻┛┗┛┗┻┛╋╋┗━━━┻━━┻━┛┗━┛
 # The program was created by DIMFLIX
-# https://github.com/DIMFLIX-OFFICIAL/rofi-wifi-menu
+# https://github.com/DIMFLIX-OFFICIAL/rofi-sys-tools
 
 
 # Проверяем, запущен ли NetworkManager
