@@ -81,11 +81,3 @@ This project is released under the **MIT license**, which grants the following p
 - Private use
 
 For more convoluted language, see the [**MIT License**](LICENSE)
-
-<br>
-<br>
-
-<div align="center">
-  
-   ![alt text](.meta/footer.svg)
-</div>
