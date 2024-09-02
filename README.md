@@ -1,77 +1,49 @@
-<div align="center">
-  <h2>🛠 Rofi-Sys-Tools</h2>
-</div>
 
-Enhance your workflow with **Rofi-Sys-Tools** - a comprehensive set
-of utilities for managing **Wi-Fi**, **Ethernet** and **clipboard** directly from **rofi**.
-An ideal tool for **Linux** enthusiasts seeking maximum
-efficiency and organization of their system resources.
+<h2>🛜 Rofi Network Manager</h2>
+Rofi Network Manager is a utility that allows you to conveniently interact with wifi and ethernet networks. It uses nmcli to interact with networks, and rofi to display information.
 
 
+<h2>🖼️ Review</h2>
 
-<div align="center">
-<h2>🛜 Wifi Menu</h2>
+![alt text](.meta/main-menu.png)
+![alt text](.meta/selecting-wifi-network.png)
+![alt text](.meta/wifi-network-management.png)
 
-![alt text](.meta/wifi-menu.gif)
+<h2>👨‍💻 Installation</h2>
 
-</div>
-
-<div align="center">
-<h2>🔌 Ethernet Menu</h2>
-
-![alt text](.meta/ethernet-menu.gif)
-
-</div>
-
-<div align="center">
-<h2>📋 Clipboard Manager</h2>
-
-![alt text](.meta/clipboard.png)
-
-</div>
-
-
-<div align="center">
-  <h2>👨‍💻 Installation</h2>
-</div>
-
-1. Cloning the repository: `git clone https://github.com/DIMFLIX-OFFICIAL/rofi-sys-tools.git ~/bin/rofi-sys-tools`
-2. Go to the catalog: `cd ~/bin/rofi-sys-tools`
-3. Launching utilities: \
-   `sh rofi-wifi-menu.sh` \
-   `sh rofi-ethernet-menu.sh` \
-   `sh rofi-clipboard-manager.sh`
-   
+1. Cloning the repository: `git clone https://github.com/meowrch/rofi-network-manager.git`
+2. Go to the catalog: `cd ./rofi-network-manager`
+3. Launching utilities: `sh network-manager.sh`
 4. (Optional) For easy access, add the script somewhere in your $PATH.
 
+<h2>⚙️ Polybar Configuration</h2>
 
-<div align="center">
-  <h2>⚙️ Polybar Configuration</h2>
-</div>
 
 ```
-[module/wlan]
-type = internal/network
-interface = wlan0
-interval = 3.0
-format-connected =  <label-connected>
-label-connected = "%{A1:sh ~/bin/rofi-sys-tools/rofi-wifi-menu.sh:} %{A}"
-label-connected-foreground = #A3BE8C 
-format-disconnected = <label-disconnected>
-label-disconnected = "%{A1:sh ~/bin/rofi-sys-tools/rofi-wifi-menu.sh:}󰖪 %{A}"
-label-disconnected-foreground = #D35F5E
-
-[module/ethernet]
+[module/network-manager]
 type = custom/script
-exec = "sh ~/bin/rofi-sys-tools/rofi-ethernet-menu.sh status"
-interval = 3.0
-click-left = "sh ~/bin/rofi-sys-tools/rofi-ethernet-menu.sh"
+interval = 3
+exec = "sh PATH_TO_SCRIPT --status --enabled-color "#a6e3a1" --disabled-color "#f38ba8""
+click-left = "sh PATH_TO_SCRIPT"
 label = "%output%"
+format-background = ${colors.sbg}
 ```
 
-<div align="center">
-  <h2>📜 License</h2>
-</div>
+<h2>⚙️ Waybar Configuration</h2>
+
+```
+"custom/networkmanager": {
+    "exec": "sh PATH_TO_SCRIPT --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
+    "return-type": "raw",
+    "format": "{}  ",
+    "interval": 3,
+    "rotate": 0,
+    "on-click": "sh PATH_TO_SCRIPT,
+    "tooltip": false
+},
+```
+
+<h2>📜 License</h2>
 
 This project is released under the **MIT license**, which grants the following permissions:
 
